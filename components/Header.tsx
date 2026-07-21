@@ -15,8 +15,10 @@ const PLACEHOLDER =
     </svg>
   `);
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function Header() {
-  const [src, setSrc] = useState("/portrait.jpg");
+  const [src, setSrc] = useState(`${BASE_PATH}/portrait.jpg`);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
