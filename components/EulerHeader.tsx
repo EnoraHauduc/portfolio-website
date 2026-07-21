@@ -2,80 +2,102 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Each entry is the "prefix" shown before the constant "nora" suffix.
-// index 0 is the resting state ("E" + "nora" = "Enora").
-const PREFIXES = [
-  "E",
-  "e = 2 ",
-  "e = 2.7 ",
-  "e = 2.71 ",
-  "e = 2.718 ",
-  "e = 2.7182 ",
-  "e = 2.71828 ",
-  "e = 2.71828... ",
-];
-
+// Each entry is appended to the previous one, so the numeral grows by a
+// fixed suffix at every level instead of the whole string being replaced.
+// Cumulative: "2", "2.7", "2.71", "2.718", "2.7182", "2.71828", "2.71828..."
+const DIGITS = ["2", ".7", "1", "8", "2", "8", "..."];
+const MAX_LEVEL = DIGITS.length;
 const SUFFIX = "nora";
-const STEP_DELAY = 130;
-const HOLD_DELAY = 1000;
+
+// Fractions of scroll progress (0 = header at rest position, 1 = header
+// has fully scrolled past the top of the viewport) given over to each
+// phase of the cycle. The reverse phase finishes at 0.9, leaving a margin
+// before the header actually disappears off screen.
+const FORWARD_END = 0.35;
+const HOLD_END = 0.55;
+const REVERSE_END = 0.9;
+
+function levelForProgress(p: number) {
+  if (p <= FORWARD_END) {
+    return Math.round((p / FORWARD_END) * MAX_LEVEL);
+  }
+  if (p <= HOLD_END) {
+    return MAX_LEVEL;
+  }
+  if (p <= REVERSE_END) {
+    const t = (p - HOLD_END) / (REVERSE_END - HOLD_END);
+    return Math.round(MAX_LEVEL * (1 - t));
+  }
+  return 0;
+}
 
 export default function EulerHeader() {
-  const [step, setStep] = useState(0);
-  const [pulse, setPulse] = useState(false);
-  const animatingRef = useRef(false);
-  const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
-
-  const clearTimers = () => {
-    timeouts.current.forEach(clearTimeout);
-    timeouts.current = [];
-  };
-
-  useEffect(() => clearTimers, []);
+  const ref = useRef<HTMLHeadingElement>(null);
+  const [level, setLevel] = useState(0);
 
   useEffect(() => {
-    setPulse(true);
-    const t = setTimeout(() => setPulse(false), 90);
-    return () => clearTimeout(t);
-  }, [step]);
+    const el = ref.current;
+    if (!el) return;
 
-  const handleEnter = () => {
-    if (animatingRef.current) return;
-    animatingRef.current = true;
-    clearTimers();
+    let frame = 0;
 
-    let delay = 0;
-    for (let i = 1; i < PREFIXES.length; i += 1) {
-      delay += STEP_DELAY;
-      timeouts.current.push(setTimeout(() => setStep(i), delay));
-    }
+    const update = () => {
+      frame = 0;
+      const rect = el.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      // Document-space top of the element stays constant across scroll
+      // positions (barring layout shifts), so this can be recomputed
+      // every frame instead of cached once on mount.
+      const absoluteTop = rect.top + scrollY;
+      const total = absoluteTop + rect.height;
+      const p = total > 0 ? Math.min(1, Math.max(0, scrollY / total)) : 0;
+      setLevel(levelForProgress(p));
+    };
 
-    delay += HOLD_DELAY;
+    const onScrollOrResize = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(update);
+    };
 
-    for (let i = PREFIXES.length - 2; i >= 0; i -= 1) {
-      delay += STEP_DELAY;
-      timeouts.current.push(setTimeout(() => setStep(i), delay));
-    }
+    update();
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
 
-    timeouts.current.push(
-      setTimeout(() => {
-        animatingRef.current = false;
-      }, delay + 20)
-    );
-  };
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const active = level > 0;
+  const digits = DIGITS.slice(0, level);
 
   return (
     <h1
-      onMouseEnter={handleEnter}
-      className="cursor-default select-none whitespace-nowrap font-display text-[15vw] leading-[0.85] tracking-tight sm:text-8xl md:text-9xl"
+      ref={ref}
+      className="select-none whitespace-nowrap font-display text-[15vw] leading-[0.85] tracking-tight sm:text-8xl md:text-9xl"
     >
-      <span
-        className={`inline-block transition-all duration-150 ease-out ${
-          pulse ? "text-neutral-500 opacity-70" : "text-black opacity-100"
-        }`}
-      >
-        {PREFIXES[step]}
-      </span>
-      <span className="inline-block text-black">{SUFFIX}</span>
+      {active ? (
+        <span key="eq" className="inline-block animate-euler-in">
+          e =
+        </span>
+      ) : (
+        <span key="rest" className="inline-block animate-euler-in">
+          E
+        </span>
+      )}
+      {/* Kept as a bare text node rather than inside a span: inline-block
+          boxes trim their own leading/trailing whitespace, which was
+          silently swallowing this gap. */}
+      {active && " "}
+      {digits.map((digit, i) => (
+        <span key={`d-${i}`} className="inline-block animate-euler-in">
+          {digit}
+        </span>
+      ))}
+      {active && " "}
+      <span className="inline-block">{SUFFIX}</span>
     </h1>
   );
 }
