@@ -17,7 +17,7 @@ const PLACEHOLDER =
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export default function Header({ progress }: { progress: number }) {
+export default function Header() {
   const [src, setSrc] = useState(`${BASE_PATH}/portrait.jpg`);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -39,7 +39,7 @@ export default function Header({ progress }: { progress: number }) {
         </p>
 
         <div className="mt-1">
-          <EulerHeader progress={progress} />
+          <EulerHeader />
           <div className="whitespace-nowrap font-display text-[15vw] leading-[0.85] tracking-tight sm:text-8xl md:text-9xl">
             Hauduc
           </div>
