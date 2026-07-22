@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import BrowserFrame from "./BrowserFrame";
+import BorderedFrame from "./BorderedFrame";
 import EulerHeader from "./EulerHeader";
+import { BASE_PATH } from "@/lib/basePath";
 
 const PLACEHOLDER =
   "data:image/svg+xml;utf8," +
@@ -14,8 +15,6 @@ const PLACEHOLDER =
       <text x="400" y="980" font-family="monospace" font-size="20" fill="#000" text-anchor="middle">add public/portrait.jpg</text>
     </svg>
   `);
-
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Header() {
   const [src, setSrc] = useState(`${BASE_PATH}/portrait.jpg`);
@@ -50,16 +49,18 @@ export default function Header() {
         </p>
       </div>
 
-      <BrowserFrame>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          ref={imgRef}
-          src={src}
-          alt="Portrait of Enora Hauduc"
-          className="h-full w-full object-cover"
-          onError={() => setSrc(PLACEHOLDER)}
-        />
-      </BrowserFrame>
+      <div className="mx-auto w-full max-w-sm sm:max-w-md">
+        <BorderedFrame variant="window" rotateDeg={-1} aspectClassName="aspect-[4/5]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            ref={imgRef}
+            src={src}
+            alt="Portrait of Enora Hauduc"
+            className="h-full w-full object-cover"
+            onError={() => setSrc(PLACEHOLDER)}
+          />
+        </BorderedFrame>
+      </div>
     </div>
   );
 }

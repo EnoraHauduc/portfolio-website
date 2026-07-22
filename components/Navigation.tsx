@@ -1,5 +1,8 @@
 const LINKS = [
-  { href: "#work", label: "Work" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#publications", label: "Publications" },
+  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
@@ -11,7 +14,7 @@ export default function Navigation() {
         <a href="#" className="font-serif text-lg italic">
           Enora Hauduc
         </a>
-        <ul className="flex gap-6 sm:gap-8">
+        <ul className="flex gap-4 overflow-x-auto whitespace-nowrap sm:gap-6">
           {LINKS.map((link) => (
             <li key={link.href}>
               <a

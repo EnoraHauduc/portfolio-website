@@ -1,17 +1,23 @@
 import AboutSection from "@/components/AboutSection";
 import ContactForm from "@/components/ContactForm";
+import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navigation from "@/components/Navigation";
-import WorkSection from "@/components/WorkSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import PublicationsSection from "@/components/PublicationsSection";
 
 export default function Home() {
   return (
     <main>
       <Navigation />
       <HeroSection />
-      <WorkSection />
       <AboutSection />
+      <ProjectsSection />
+      <EducationSection />
+      <PublicationsSection />
+      <ExperienceSection />
       <section id="contact" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
         <h2 className="font-display text-4xl sm:text-5xl">Contact</h2>
         <p className="mt-4 max-w-xl font-serif text-lg italic text-neutral-600">
