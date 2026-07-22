@@ -1,4 +1,5 @@
 import AboutSection from "@/components/AboutSection";
+import BlogSection from "@/components/BlogSection";
 import ContactForm from "@/components/ContactForm";
 import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -20,6 +21,7 @@ export default function Home() {
       <PublicationsSection />
       <SpeakingSection />
       <ExperienceSection />
+      <BlogSection />
       <section id="contact" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
         <h2 className="font-display text-4xl sm:text-5xl">Contact</h2>
         <p className="mt-4 max-w-xl font-serif text-lg italic text-neutral-600">
