@@ -1,4 +1,4 @@
-import PostRow from "./PostRow";
+import EntryRow from "./EntryRow";
 import { POSTS } from "@/lib/posts";
 
 export default function ProjectsSection() {
@@ -10,7 +10,14 @@ export default function ProjectsSection() {
       </p>
       <div className="mt-10">
         {POSTS.map((post) => (
-          <PostRow key={post.slug} post={post} />
+          <EntryRow
+            key={post.slug}
+            href={`/projects/${post.slug}`}
+            category={post.category}
+            title={post.title}
+            description={post.description}
+            seed={post.slug}
+          />
         ))}
       </div>
     </section>
