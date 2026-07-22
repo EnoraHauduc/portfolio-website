@@ -15,6 +15,11 @@ const EDUCATION: EducationEntry[] = [
     program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    highlights: [
+      "Lorem ipsum dolor sit amet",
+      "Consectetur adipiscing elit",
+      "Sed do eiusmod tempor incididunt",
+    ],
   },
 ];
 
