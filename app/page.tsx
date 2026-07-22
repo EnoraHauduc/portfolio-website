@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import Navigation from "@/components/Navigation";
 import ProjectsSection from "@/components/ProjectsSection";
 import PublicationsSection from "@/components/PublicationsSection";
+import SpeakingSection from "@/components/SpeakingSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ProjectsSection />
       <EducationSection />
       <PublicationsSection />
+      <SpeakingSection />
       <ExperienceSection />
       <section id="contact" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
         <h2 className="font-display text-4xl sm:text-5xl">Contact</h2>
