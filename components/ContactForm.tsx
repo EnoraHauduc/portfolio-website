@@ -1,42 +1,19 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-
-type Status = "idle" | "submitting" | "success" | "error";
+import { useForm, ValidationError } from "@formspree/react";
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<Status>("idle");
+  const [state, handleSubmit] = useForm(FORMSPREE_ID ?? "");
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!FORMSPREE_ID) {
-      setStatus("error");
-      return;
-    }
-
-    const form = event.currentTarget;
-    setStatus("submitting");
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(form),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
+  if (state.succeeded) {
+    return (
+      <p className="mt-8 max-w-xl text-sm text-neutral-700">
+        Thanks for reaching out — I&apos;ll get back to you soon.
+      </p>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="mt-8 max-w-xl space-y-6">
@@ -51,6 +28,7 @@ export default function ContactForm() {
           required
           className="mt-2 w-full border-b-2 border-black bg-transparent py-2 outline-none focus:border-neutral-500"
         />
+        <ValidationError prefix="Name" field="name" errors={state.errors} className="mt-1 text-sm text-red-700" />
       </div>
 
       <div>
@@ -64,6 +42,7 @@ export default function ContactForm() {
           required
           className="mt-2 w-full border-b-2 border-black bg-transparent py-2 outline-none focus:border-neutral-500"
         />
+        <ValidationError prefix="Email" field="email" errors={state.errors} className="mt-1 text-sm text-red-700" />
       </div>
 
       <div>
@@ -77,22 +56,23 @@ export default function ContactForm() {
           required
           className="mt-2 w-full border-b-2 border-black bg-transparent py-2 outline-none focus:border-neutral-500"
         />
+        <ValidationError prefix="Message" field="message" errors={state.errors} className="mt-1 text-sm text-red-700" />
       </div>
 
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={state.submitting}
         className="rounded-full border-2 border-black px-8 py-3 text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper disabled:opacity-50"
       >
-        {status === "submitting" ? "Sending..." : "Send message"}
+        {state.submitting ? "Sending..." : "Send message"}
       </button>
 
-      {status === "success" && (
+      {!FORMSPREE_ID && (
         <p className="text-sm text-neutral-700">
-          Thanks for reaching out — I&apos;ll get back to you soon.
+          Contact form is not configured. Set NEXT_PUBLIC_FORMSPREE_ID to enable it.
         </p>
       )}
-      {status === "error" && (
+      {FORMSPREE_ID && state.errors && state.errors.getFormErrors().length > 0 && (
         <p className="text-sm text-neutral-700">
           Something went wrong. Please try again, or email me directly.
         </p>
