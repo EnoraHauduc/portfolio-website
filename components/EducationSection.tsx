@@ -8,22 +8,24 @@ type EducationEntry = {
 
 const EDUCATION: EducationEntry[] = [
   {
-    id: "placeholder-university",
-    dates: "20XX — Present",
-    school: "Placeholder University",
-    program: "BSc, Mathematics (expected)",
+    id: "Haberdashers-Girls-School",
+    dates: "2012 - 2026",
+    school: "Haberdashers' Girls' School",
+    program: "A-Levels: Mathematics, Further Mathematics, Computer Science",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, with coursework spanning analysis, probability, and computational mathematics.",
-  },
-  {
-    id: "placeholder-secondary-school",
-    dates: "20XX — 20XX",
-    school: "Placeholder Secondary School",
-    program: "A-Levels / IB Diploma — Mathematics, Further Mathematics, Physics",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat, including independent research culminating in an occasional paper on computer vision in agriculture.",
-  },
-];
+      "GCSEs: 9s (A**) in all 10 subjects, including Maths, English Language (Distinction), and Triple Science
+    
+    • Mathematical Olympiad for Girls - Distinction - 'Best in School'
+    • Co-authored a book on Generative AI in the Classroom
+    • Published in Habs' AI guidance for teachers; AI policy team; HabsLab Steering Group
+    • ERP: 2nd place in STEM across both Haberdashers' schools - 'Harvesting Intelligence: How Computer Vision is Transforming Food Security in Agriculture'
+    • Sixth Form Digital Lead '24-25 – Leading and implementing school-wide digital innovation
+    • TEDxYouth@HabsElstree Speaker 
+    • Prefect for Year 10 – Academic and pastoral mentoring for over 100 students
+    • Maths Mentor ‘24–25 – Supporting Year 11s with GCSE concepts and exam techniques
+    • Leader of Neurodiversity Society '23-25 - Running weekly sessions and organising whole-school diversity weeks for over 1000 students and staff
+    •  Maths Society Team - Organising activities to encourage engagement with maths beyond the curriculum",
+  }
 
 export default function EducationSection() {
   return (
