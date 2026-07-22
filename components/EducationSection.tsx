@@ -4,6 +4,7 @@ type EducationEntry = {
   school: string;
   program: string;
   description: string;
+  highlights: string[];
 };
 
 const EDUCATION: EducationEntry[] = [
@@ -34,6 +35,11 @@ export default function EducationSection() {
               <h3 className="font-display text-xl">{entry.school}</h3>
               <p className="font-serif italic text-neutral-600">{entry.program}</p>
               <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700">
+                {entry.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
