@@ -11,29 +11,12 @@ type Publication = {
 
 const PUBLICATIONS: Publication[] = [
   {
-    id: "book-chapter",
-    title: "Generative AI, Bias & Policy — Book Chapter",
-    venue: "Edited volume on AI in institutional settings",
+    id: "ai-bias-in-education-book-chapter",
+    title: "AI Bias in Education (Book Chapter)",
+    venue: "Lorem ipsum dolor sit amet",
     year: "20XX",
     description:
-      "A practitioner-focused chapter co-authored on generative AI, bias, and policy in institutional settings.",
-    href: "/projects/book-chapter-generative-ai-bias",
-  },
-  {
-    id: "cv-occasional-paper",
-    title: "Computer Vision Applications in Agriculture",
-    venue: "School occasional paper series",
-    year: "20XX",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: "placeholder-publication",
-    title: "Placeholder Publication Title",
-    venue: "Placeholder Journal / Conference",
-    year: "20XX",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 

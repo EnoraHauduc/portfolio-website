@@ -12,28 +12,35 @@ type SpeakingEngagement = {
 const SPEAKING: SpeakingEngagement[] = [
   {
     id: "tedx-time-perception",
-    title: "TEDx Talk — The Philosophy of Time Perception",
+    title: "TEDx Talk: The Philosophy of Time Perception",
     venue: "TEDx",
     year: "20XX",
     description:
-      "How cognitive and physical models of time diverge, and what that reveals about the limits of human intuition.",
-    href: "/projects/tedx-time-perception",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "wellington-festival-panel",
-    title: "Panel — Algorithmic Bias in Education",
+    title: "Wellington Festival of Education — Panel",
     venue: "Wellington Festival of Education",
     year: "20XX",
     description:
-      "A panel conversation on algorithmic bias in education, and how AI is reshaping how students are taught.",
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    id: "placeholder-speaking",
-    title: "Placeholder Speaking Engagement",
-    venue: "Placeholder Conference / Event",
+    id: "gsa-conference-panel",
+    title: "Girls' School Association Conference — Panel",
+    venue: "Girls' School Association Conference",
     year: "20XX",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    id: "you-make-your-own-luck",
+    title: "You Make Your Own Luck (co-delivered talk)",
+    venue: "Lorem ipsum dolor sit amet",
+    year: "20XX",
+    description:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
 ];
 

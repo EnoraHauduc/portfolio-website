@@ -10,23 +10,11 @@ type EducationEntry = {
 const EDUCATION: EducationEntry[] = [
   {
     id: "habs-girls-school",
-    dates: "2012 – 2026",
+    dates: "20XX — 20XX",
     school: "Haberdashers' Girls' School",
-    program: "A-Levels: Mathematics, Further Mathematics, Computer Science",
+    program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     description:
-      "GCSEs: 9s (A**) in all 10 subjects, including Maths, English Language (Distinction), and Triple Science.",
-    highlights: [
-      "Mathematical Olympiad for Girls - Distinction - 'Best in School'",
-      "Co-authored a book on Generative AI in the Classroom",
-      "Published in Habs' AI guidance for teachers; AI policy team; HabsLab Steering Group",
-      "ERP: 2nd place in STEM across both Haberdashers' schools - 'Harvesting Intelligence: How Computer Vision is Transforming Food Security in Agriculture'",
-      "Sixth Form Digital Lead '24-25 – Leading and implementing school-wide digital innovation",
-      "TEDxYouth@HabsElstree Speaker",
-      "Prefect for Year 10 – Academic and pastoral mentoring for over 100 students",
-      "Maths Mentor '24-25 – Supporting Year 11s with GCSE concepts and exam techniques",
-      "Leader of Neurodiversity Society '23-25 - Running weekly sessions and organising whole-school diversity weeks for over 1000 students and staff",
-      "Maths Society Team - Organising activities to encourage engagement with maths beyond the curriculum",
-    ],
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 

@@ -8,26 +8,18 @@ type ExperienceEntry = {
 
 const EXPERIENCE: ExperienceEntry[] = [
   {
-    id: "beri-labs",
-    dates: "20XX — Present",
-    role: "Co-Founder",
-    org: "Beri-Labs",
-    description:
-      "Building RAG-powered tools that let students query their school's own documents in natural language.",
-  },
-  {
-    id: "placeholder-internship",
+    id: "up3",
     dates: "20XX",
-    role: "Placeholder Role",
-    org: "Placeholder Organization",
+    role: "Lorem ipsum dolor sit amet",
+    org: "UP3",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    id: "placeholder-research",
+    id: "ocado-technology",
     dates: "20XX",
-    role: "Placeholder Research Assistant",
-    org: "Placeholder Department",
+    role: "Lorem ipsum dolor sit amet",
+    org: "Ocado Technology",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
