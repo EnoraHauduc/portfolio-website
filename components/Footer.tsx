@@ -7,21 +7,13 @@ export default function Footer() {
         </p>
         <div className="flex gap-6">
           <a
-            href="mailto:hello@example.com"
+            href="mailto:enorahauduc@gmail.com"
             className="transition-opacity hover:opacity-60"
           >
             Email
           </a>
           <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="transition-opacity hover:opacity-60"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/enorahauduc/"
             target="_blank"
             rel="noreferrer"
             className="transition-opacity hover:opacity-60"
