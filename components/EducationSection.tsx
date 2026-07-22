@@ -8,20 +8,12 @@ type EducationEntry = {
 
 const EDUCATION: EducationEntry[] = [
   {
-    id: "placeholder-university",
-    dates: "20XX — Present",
-    school: "Placeholder University",
-    program: "BSc, Mathematics (expected)",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, with coursework spanning analysis, probability, and computational mathematics.",
-  },
-  {
-    id: "placeholder-secondary-school",
+    id: "habs-girls-school",
     dates: "20XX — 20XX",
-    school: "Placeholder Secondary School",
-    program: "A-Levels / IB Diploma — Mathematics, Further Mathematics, Physics",
+    school: "Haberdashers' Girls' School",
+    program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat, including independent research culminating in an occasional paper on computer vision in agriculture.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
