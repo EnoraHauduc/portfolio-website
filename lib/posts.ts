@@ -1,13 +1,9 @@
-import type { BorderedFrameImage, BorderedFrameVariant } from "@/components/BorderedFrame";
-
 export type Post = {
   slug: string;
   title: string;
   category: string;
   description: string;
   body: string[];
-  border: BorderedFrameVariant;
-  image?: BorderedFrameImage;
 };
 
 export const POSTS: Post[] = [
@@ -17,7 +13,6 @@ export const POSTS: Post[] = [
     category: "Startup",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    border: "browserTab",
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -30,7 +25,6 @@ export const POSTS: Post[] = [
     category: "Project",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    border: "window",
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -43,7 +37,6 @@ export const POSTS: Post[] = [
     category: "Project",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    border: "blackTab",
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -54,9 +47,4 @@ export const POSTS: Post[] = [
 
 export function getPostBySlug(slug: string): Post | undefined {
   return POSTS.find((post) => post.slug === slug);
-}
-
-export function getPostImage(post: Post): BorderedFrameImage | undefined {
-  if (!post.image) return undefined;
-  return { src: post.image.src, alt: post.image.alt || `${post.title} — preview image` };
 }
