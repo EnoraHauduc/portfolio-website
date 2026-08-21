@@ -7,7 +7,7 @@ export default function AboutSection() {
       <h2 className="font-display text-4xl sm:text-5xl">About</h2>
       <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-3">
         <p className="font-serif text-2xl italic leading-snug text-neutral-700 md:col-span-1">
-          Hi, I&apos;m Enora Hauduc — an incoming mathematics student at UCL with a
+          Hi, I&apos;m Enora Hauduc - an incoming mathematics student at UCL with a
           keen interest in all things maths and AI!
         </p>
         <div className="space-y-4 text-base leading-relaxed text-neutral-800 md:col-span-2">
