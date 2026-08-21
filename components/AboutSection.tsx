@@ -12,7 +12,7 @@ export default function AboutSection() {
         </p>
         <div className="space-y-4 text-base leading-relaxed text-neutral-800 md:col-span-2">
           <p>
-            I've co-founded Beri-Labs, an ed-tech startup building
+            I&apos;ve co-founded Beri-Labs, an ed-tech startup building
             RAG-powered tools that let students query their school&apos;s
             own documents in natural language, and my research on computer
             vision applications in agriculture was published as an
@@ -31,6 +31,7 @@ export default function AboutSection() {
             intuition.
           </p>
           <p>
+            
             I&apos;m always keen to learn more from everyone and am actively seeking work
             experience and internships in mathematical and AI-related
             fields. Let&apos;s connect! Feel free to drop me an email at{" "}
