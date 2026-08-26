@@ -117,12 +117,26 @@ const FRAME_BY_VARIANT: Record<BorderedFrameVariant, (props: FrameProps) => JSX.
   blackTab: BlackTabFrame,
 };
 
+function PlayButton() {
+  return (
+    <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+      <span className="flex h-12 w-12 items-center justify-center rounded-full border-[2px] border-black bg-white/90 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
+        <svg viewBox="0 0 24 24" aria-hidden className="ml-0.5 h-5 w-5 fill-black">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </span>
+    </div>
+  );
+}
+
 function FrameImage({
   image,
   placeholderLabel,
+  showPlayButton,
 }: {
   image?: BorderedFrameImage;
   placeholderLabel?: string;
+  showPlayButton?: boolean;
 }) {
   if (!image) {
     return (
@@ -135,8 +149,11 @@ function FrameImage({
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={withBasePath(image.src)} alt={image.alt} className="h-full w-full object-cover" />
+    <div className="relative h-full w-full">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={withBasePath(image.src)} alt={image.alt} className="h-full w-full object-cover" />
+      {showPlayButton && <PlayButton />}
+    </div>
   );
 }
 
@@ -144,6 +161,7 @@ type BorderedFrameProps = {
   variant: BorderedFrameVariant;
   image?: BorderedFrameImage;
   placeholderLabel?: string;
+  showPlayButton?: boolean;
   rotateDeg?: number;
   offsetX?: number;
   offsetY?: number;
@@ -156,6 +174,7 @@ export default function BorderedFrame({
   variant,
   image,
   placeholderLabel,
+  showPlayButton,
   rotateDeg = 0,
   offsetX = 0,
   offsetY = 0,
@@ -170,7 +189,9 @@ export default function BorderedFrame({
 
   return (
     <Frame style={style} className={className} aspectClassName={aspectClassName}>
-      {children ?? <FrameImage image={image} placeholderLabel={placeholderLabel} />}
+      {children ?? (
+        <FrameImage image={image} placeholderLabel={placeholderLabel} showPlayButton={showPlayButton} />
+      )}
     </Frame>
   );
 }

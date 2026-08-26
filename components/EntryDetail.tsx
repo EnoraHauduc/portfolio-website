@@ -13,6 +13,7 @@ type EntryDetailProps = {
   seed: string;
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
+  video?: { youtubeId: string };
 };
 
 export default function EntryDetail({
@@ -24,6 +25,7 @@ export default function EntryDetail({
   seed,
   border,
   image,
+  video,
 }: EntryDetailProps) {
   const transform = border ? seededFrameTransform(seed) : null;
 
@@ -42,15 +44,30 @@ export default function EntryDetail({
         <h1 className="mt-1 font-display text-4xl sm:text-5xl">{title}</h1>
 
         {border && transform && (
-          <div className="mx-auto mt-10 w-full max-w-md">
+          <div className={`mx-auto mt-10 w-full ${video ? "max-w-3xl" : "max-w-md"}`}>
             <BorderedFrame
               variant={border}
-              image={image ? { src: image.src, alt: image.alt || `${title} — preview image` } : undefined}
+              image={
+                !video && image
+                  ? { src: image.src, alt: image.alt || `${title} — preview image` }
+                  : undefined
+              }
               placeholderLabel={category}
-              rotateDeg={transform.rotateDeg}
-              offsetX={transform.offsetX}
-              offsetY={transform.offsetY}
-            />
+              rotateDeg={video ? 0 : transform.rotateDeg}
+              offsetX={video ? 0 : transform.offsetX}
+              offsetY={video ? 0 : transform.offsetY}
+              aspectClassName={video ? "aspect-video" : "aspect-[4/3]"}
+            >
+              {video && (
+                <iframe
+                  className="h-full w-full"
+                  src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              )}
+            </BorderedFrame>
           </div>
         )}
 

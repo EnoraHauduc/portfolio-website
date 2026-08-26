@@ -10,6 +10,7 @@ type EntryRowProps = {
   seed: string;
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
+  hasVideo?: boolean;
 };
 
 export default function EntryRow({
@@ -20,6 +21,7 @@ export default function EntryRow({
   seed,
   border,
   image,
+  hasVideo,
 }: EntryRowProps) {
   const transform = border ? seededFrameTransform(seed) : null;
 
@@ -42,6 +44,7 @@ export default function EntryRow({
             variant={border}
             image={image ? { src: image.src, alt: image.alt || `${title} — preview image` } : undefined}
             placeholderLabel={category}
+            showPlayButton={hasVideo}
             rotateDeg={transform.rotateDeg}
             offsetX={transform.offsetX}
             offsetY={transform.offsetY}

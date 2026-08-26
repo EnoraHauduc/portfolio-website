@@ -16,6 +16,7 @@ export default function SpeakingSection() {
             seed={entry.slug}
             border={entry.border}
             image={entry.image}
+            hasVideo={Boolean(entry.video)}
           />
         ))}
       </div>

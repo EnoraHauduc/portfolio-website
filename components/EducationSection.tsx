@@ -2,25 +2,31 @@ type EducationEntry = {
   id: string;
   dates: string;
   school: string;
-  program: string;
-  description: string;
-  highlights: string[];
+  program?: string;
+  description?: string;
+  highlights?: string[];
 };
 
 const EDUCATION: EducationEntry[] = [
   {
+    id: "UCL-maths",
+    dates: "2026 — 2029",
+    school: "UCL",
+    program: "Mathematics (BSc)",
+  },
+
+  {
     id: "habs-girls-school",
-    dates: "20XX — 20XX",
+    dates: "2012 — 2026",
     school: "Haberdashers' Girls' School",
-    program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    program: "GCSEs, A-Levels",
     highlights: [
-      "Lorem ipsum dolor sit amet",
-      "Consectetur adipiscing elit",
-      "Sed do eiusmod tempor incididunt",
+      "A-Levels: 3A*s in Mathematics, Further Mathematics, and Computer Science",
+      "GCSEs: 9s (A**) in all 10 subjects",
+      "Sixth Form Digital Lead, Prefect, Leader of Neurodiversity Society, AI-Steering Group, Maths Society Team, Maths Mentor",
     ],
   },
+
 ];
 
 export default function EducationSection() {
@@ -38,13 +44,19 @@ export default function EducationSection() {
             </p>
             <div className="sm:col-span-3">
               <h3 className="font-display text-xl">{entry.school}</h3>
-              <p className="font-serif italic text-neutral-600">{entry.program}</p>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700">
-                {entry.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
+              {entry.program && (
+                <p className="font-serif italic text-neutral-600">{entry.program}</p>
+              )}
+              {entry.description && (
+                <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
+              )}
+              {entry.highlights && entry.highlights.length > 0 && (
+                <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700">
+                  {entry.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ))}
