@@ -3,25 +3,33 @@ type ExperienceEntry = {
   dates: string;
   role: string;
   org: string;
-  description: string;
+  description?: string;
+  highlights?: string[];
 };
 
 const EXPERIENCE: ExperienceEntry[] = [
   {
-    id: "up3",
-    dates: "20XX",
-    role: "Lorem ipsum dolor sit amet",
-    org: "UP3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    id: "GFO-X",
+    dates: "2026",
+    role: "AI Intern",
+    org: "GFO-X - Regulated Digital Assets Exchange and Clearing",
+    highlights: [
+      "Co-directed the development of an internal dashboard, delivering real-time visibility into company-wide AI token usage and spending trends across 6 providers for 30+ users, informing strategic resource allocation",
+      "Worked across the full stack: integrated multiple APIs and normalised data across endpoints into a unified pipeline, implemented a lightweight database backend, and built a Python-based frontend using Streamlit",
+      "Automated data collection with scheduled cron jobs and applied UX research and data-visualisation best practice to the dashboard design",
+      "Presented the final product and technical approach to the entire company, covering design decisions, safeguards and long-term maintainability",
+    ],
   },
   {
-    id: "ocado-technology",
-    dates: "20XX",
-    role: "Lorem ipsum dolor sit amet",
-    org: "Ocado Technology",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    id: "Bequant",
+    dates: "2026",
+    role: "AI Intern",
+    org: "Bequant – Crypto Assets Investment and Payment Services",
+    highlights: [
+      "Led the design and integration of an internal dashboard, consolidating client messages from multiple chats into a single interface, enhancing leadership's real-time visibility into open queries and identifying recurring pain points",
+      "Streamlined data operations by engineering robust MCP integrations and architecting a relational Notion schema, automating data collection and normalisation to significantly enhance data quality and accessibility",
+      "Developed self-correcting logic using derived formula fields to prevent tracked indicators drifting out of sync with underlying data",
+    ],
   },
 ];
 
@@ -42,7 +50,16 @@ export default function ExperienceSection() {
               <h3 className="font-display text-xl">
                 {entry.role} · {entry.org}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
+              {entry.description && (
+                <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
+              )}
+              {entry.highlights && entry.highlights.length > 0 && (
+                <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700">
+                  {entry.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ))}

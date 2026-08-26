@@ -74,35 +74,6 @@ export const SPEAKING: SpeakingEntry[] = [
     ],
   },
   {
-    slug: "gsa-conference-panel",
-    title: "Girls' School Association Conference — Panel",
-    venue: "Girls' School Association Conference",
-    year: "2026",
-    description:
-      "I was invited to speak on a panel at the Girls' School Association Conference, discussing the ethical implications of AI in education and how to ensure that students are supported in navigating this rapidly evolving landscape.",
-    border: "browserTab",
-    image: {
-      src: "/speaking/GSA-conference-desk.jpg",
-      alt: "Laptop displaying the 'Notice, Mitigate, Educate' slide, alongside printed title slides and the book Biases in Education, set up ahead of the panel",
-    },
-    images: [
-      {
-        src: "/speaking/GSA-conference-desk.jpg",
-        alt: "Laptop displaying the 'Notice, Mitigate, Educate' slide, alongside printed title slides and the book Biases in Education, set up ahead of the panel",
-      },
-      {
-        src: "/speaking/GSA-conference-biased-outcomes-and-why-they-matter.jpeg",
-        alt: "Title slide reading 'Biased AI outcomes and why they matter'",
-      },
-    ],
-    body: [
-      "I was invited to speak on a panel at the Girls' School Association Conference, discussing the ethical implications of AI in education and how to ensure that students are supported in navigating this rapidly evolving landscape.",
-      "The conference brought together educators across the UK to address the complex mental health and wellbeing challenges facing young people today. With this year's theme covering digital strategies in schools, our panel explored how we can engage critically with the digital tools we're using in the classroom.",
-      "Our panel, 'Biased AI Outcomes and Why They Matter,' explored effective usage of generative AI in schools, with particular focus on the biases that can occur. We explored how AI acts like a mirror to the biases in the world, and when we use it superficially, we risk overlooking its limitations.",
-      "We concluded that AI must instead be used thoughtfully through three key strategies: Notice, Mitigate, and Educate."
-    ],
-  },
-  {
     slug: "you-make-your-own-luck",
     title: "You Make Your Own Luck (co-delivered talk)",
     venue: "Haberdashers' Girls' School",
@@ -138,6 +109,35 @@ export const SPEAKING: SpeakingEntry[] = [
       "4. Judge a Book by Its Cover - First impressions matter. When you pitch an idea, you're asking for someone's time and attention so prepare accordingly.",
       "5. Luck = Preparation + Opportunity - You can't control everything. But you can position yourself so that when moments come (and they will), you're ready.",
       "6. Fail Fast, Learn Faster - Rejection is normal. The people who cultivate luck don't have higher success rates; they just try more. Yes, they face more rejections. But they also succeed more. And crucially, they learn from what went wrong.",
+    ],
+  },
+  {
+    slug: "gsa-conference-panel",
+    title: "Girls' School Association Conference — Panel",
+    venue: "Girls' School Association Conference",
+    year: "2026",
+    description:
+      "I was invited to speak on a panel at the Girls' School Association Conference, discussing the ethical implications of AI in education and how to ensure that students are supported in navigating this rapidly evolving landscape.",
+    border: "browserTab",
+    image: {
+      src: "/speaking/GSA-conference-desk.jpg",
+      alt: "Laptop displaying the 'Notice, Mitigate, Educate' slide, alongside printed title slides and the book Biases in Education, set up ahead of the panel",
+    },
+    images: [
+      {
+        src: "/speaking/GSA-conference-desk.jpg",
+        alt: "Laptop displaying the 'Notice, Mitigate, Educate' slide, alongside printed title slides and the book Biases in Education, set up ahead of the panel",
+      },
+      {
+        src: "/speaking/GSA-conference-biased-outcomes-and-why-they-matter.jpeg",
+        alt: "Title slide reading 'Biased AI outcomes and why they matter'",
+      },
+    ],
+    body: [
+      "I was invited to speak on a panel at the Girls' School Association Conference, discussing the ethical implications of AI in education and how to ensure that students are supported in navigating this rapidly evolving landscape.",
+      "The conference brought together educators across the UK to address the complex mental health and wellbeing challenges facing young people today. With this year's theme covering digital strategies in schools, our panel explored how we can engage critically with the digital tools we're using in the classroom.",
+      "Our panel, 'Biased AI Outcomes and Why They Matter,' explored effective usage of generative AI in schools, with particular focus on the biases that can occur. We explored how AI acts like a mirror to the biases in the world, and when we use it superficially, we risk overlooking its limitations.",
+      "We concluded that AI must instead be used thoughtfully through three key strategies: Notice, Mitigate, and Educate."
     ],
   },
 ];
