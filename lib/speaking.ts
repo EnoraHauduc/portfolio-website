@@ -110,6 +110,24 @@ export const SPEAKING: SpeakingEntry[] = [
     description:
       "As part of the very first student-led Heads' Lecture Series at Haberdashers' Elstree Schools, Ravjoth Brar and I, shared our journey building Beri Labs, an AI education start-up creating real-world AI tools for schools.",
     border: "blackTab",
+    image: {
+      src: "/speaking/you-make-your-own-luck-presenting.jpg",
+      alt: "Ravjoth Brar and Enora Hauduc standing in front of the title slide for 'You make your own luck' at the Heads' Lecture Series",
+    },
+    images: [
+      {
+        src: "/speaking/you-make-your-own-luck-presenting.jpg",
+        alt: "Ravjoth Brar and Enora Hauduc standing in front of the title slide for 'You make your own luck' at the Heads' Lecture Series",
+      },
+      {
+        src: "/speaking/you-make-your-own-luck-noticeboard.jpeg",
+        alt: "The Heads' Lecture Series noticeboard displaying the 'You Make Your Own Luck' talk announcement alongside other lectures",
+      },
+      {
+        src: "/speaking/you-make-your-own-luck-poster.jpeg",
+        alt: "The 'You Make Your Own Luck' lecture poster, featuring the Beri logo and talk details",
+      },
+    ],
     body: [
       "As part of the very first student-led Heads' Lecture Series at Haberdashers' Elstree Schools, Ravjoth Brar and I, shared our journey building Beri Labs, an AI education start-up creating real-world AI tools for schools.",
       "What makes an individual lucky? Is it natural talent? Being in the right place at the right time?",
