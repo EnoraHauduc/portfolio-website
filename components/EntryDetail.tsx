@@ -13,6 +13,7 @@ type EntryDetailProps = {
   seed: string;
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
+  images?: { src: string; alt?: string }[];
   video?: { youtubeId: string };
 };
 
@@ -25,6 +26,7 @@ export default function EntryDetail({
   seed,
   border,
   image,
+  images,
   video,
 }: EntryDetailProps) {
   const transform = border ? seededFrameTransform(seed) : null;
@@ -50,6 +52,11 @@ export default function EntryDetail({
               image={
                 !video && image
                   ? { src: image.src, alt: image.alt || `${title} — preview image` }
+                  : undefined
+              }
+              images={
+                !video && images && images.length > 0
+                  ? images.map((img) => ({ src: img.src, alt: img.alt || `${title} — preview image` }))
                   : undefined
               }
               placeholderLabel={category}

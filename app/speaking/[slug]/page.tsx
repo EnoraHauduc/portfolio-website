@@ -36,6 +36,7 @@ export default function SpeakingPage({ params }: { params: { slug: string } }) {
       seed={entry.slug}
       border={entry.border}
       image={entry.image}
+      images={entry.images}
       video={entry.video}
     />
   );

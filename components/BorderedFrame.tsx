@@ -1,4 +1,6 @@
-import type { CSSProperties, JSX, ReactNode } from "react";
+"use client";
+
+import { useEffect, useState, type CSSProperties, type JSX, type ReactNode } from "react";
 import { withBasePath } from "@/lib/basePath";
 
 export type BorderedFrameVariant = "window" | "crt" | "browserTab" | "blackTab";
@@ -131,14 +133,29 @@ function PlayButton() {
 
 function FrameImage({
   image,
+  images,
   placeholderLabel,
   showPlayButton,
+  cycleIntervalMs = 3000,
 }: {
   image?: BorderedFrameImage;
+  images?: BorderedFrameImage[];
   placeholderLabel?: string;
   showPlayButton?: boolean;
+  cycleIntervalMs?: number;
 }) {
-  if (!image) {
+  const gallery = images && images.length > 0 ? images : image ? [image] : [];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (gallery.length < 2) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % gallery.length);
+    }, cycleIntervalMs);
+    return () => clearInterval(id);
+  }, [gallery.length, cycleIntervalMs]);
+
+  if (gallery.length === 0) {
     return (
       <div className="flex h-full w-full items-center justify-center bg-[#faf3e0] px-4 text-center">
         <span className="font-serif text-xs italic text-neutral-500">
@@ -148,10 +165,17 @@ function FrameImage({
     );
   }
 
+  const current = gallery[index % gallery.length];
+
   return (
     <div className="relative h-full w-full">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={withBasePath(image.src)} alt={image.alt} className="h-full w-full object-cover" />
+      <img
+        key={current.src}
+        src={withBasePath(current.src)}
+        alt={current.alt}
+        className="h-full w-full object-cover"
+      />
       {showPlayButton && <PlayButton />}
     </div>
   );
@@ -160,6 +184,7 @@ function FrameImage({
 type BorderedFrameProps = {
   variant: BorderedFrameVariant;
   image?: BorderedFrameImage;
+  images?: BorderedFrameImage[];
   placeholderLabel?: string;
   showPlayButton?: boolean;
   rotateDeg?: number;
@@ -173,6 +198,7 @@ type BorderedFrameProps = {
 export default function BorderedFrame({
   variant,
   image,
+  images,
   placeholderLabel,
   showPlayButton,
   rotateDeg = 0,
@@ -190,7 +216,12 @@ export default function BorderedFrame({
   return (
     <Frame style={style} className={className} aspectClassName={aspectClassName}>
       {children ?? (
-        <FrameImage image={image} placeholderLabel={placeholderLabel} showPlayButton={showPlayButton} />
+        <FrameImage
+          image={image}
+          images={images}
+          placeholderLabel={placeholderLabel}
+          showPlayButton={showPlayButton}
+        />
       )}
     </Frame>
   );
