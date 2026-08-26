@@ -2,7 +2,9 @@ type ExperienceEntry = {
   id: string;
   dates: string;
   role: string;
-  org: string;
+  company: string;
+  companyUrl?: string;
+  companyDescription?: string;
   description?: string;
   highlights?: string[];
 };
@@ -10,9 +12,11 @@ type ExperienceEntry = {
 const EXPERIENCE: ExperienceEntry[] = [
   {
     id: "GFO-X",
-    dates: "2026",
+    dates: "2 Weeks - July 2026",
     role: "AI Intern",
-    org: "GFO-X - Regulated Digital Assets Exchange and Clearing",
+    company: "GFO-X",
+    companyUrl: "https://www.gfo-x.com/",
+    companyDescription: "Regulated Digital Assets Exchange and Clearing",
     highlights: [
       "Co-directed the development of an internal dashboard, delivering real-time visibility into company-wide AI token usage and spending trends across 6 providers for 30+ users, informing strategic resource allocation",
       "Worked across the full stack: integrated multiple APIs and normalised data across endpoints into a unified pipeline, implemented a lightweight database backend, and built a Python-based frontend using Streamlit",
@@ -22,9 +26,11 @@ const EXPERIENCE: ExperienceEntry[] = [
   },
   {
     id: "Bequant",
-    dates: "2026",
+    dates: "2 Weeks - August 2026",
     role: "AI Intern",
-    org: "Bequant – Crypto Assets Investment and Payment Services",
+    company: "Bequant",
+    companyUrl: "https://bequant.io/",
+    companyDescription: "Crypto Assets Investment and Payment Services",
     highlights: [
       "Led the design and integration of an internal dashboard, consolidating client messages from multiple chats into a single interface, enhancing leadership's real-time visibility into open queries and identifying recurring pain points",
       "Streamlined data operations by engineering robust MCP integrations and architecting a relational Notion schema, automating data collection and normalisation to significantly enhance data quality and accessibility",
@@ -48,8 +54,23 @@ export default function ExperienceSection() {
             </p>
             <div className="sm:col-span-3">
               <h3 className="font-display text-xl">
-                {entry.role} · {entry.org}
+                {entry.role} -{" "}
+                {entry.companyUrl ? (
+                  <a
+                    href={entry.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-neutral-600"
+                  >
+                    {entry.company}
+                  </a>
+                ) : (
+                  entry.company
+                )}
               </h3>
+              {entry.companyDescription && (
+                <p className="font-serif italic text-neutral-600">{entry.companyDescription}</p>
+              )}
               {entry.description && (
                 <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
               )}
