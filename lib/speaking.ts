@@ -81,6 +81,20 @@ export const SPEAKING: SpeakingEntry[] = [
     description:
       "I was invited to speak on a panel at the Girls' School Association Conference, discussing the ethical implications of AI in education and how to ensure that students are supported in navigating this rapidly evolving landscape.",
     border: "browserTab",
+    image: {
+      src: "/speaking/GSA-conference-desk.jpg",
+      alt: "Laptop displaying the 'Notice, Mitigate, Educate' slide, alongside printed title slides and the book Biases in Education, set up ahead of the panel",
+    },
+    images: [
+      {
+        src: "/speaking/GSA-conference-desk.jpg",
+        alt: "Laptop displaying the 'Notice, Mitigate, Educate' slide, alongside printed title slides and the book Biases in Education, set up ahead of the panel",
+      },
+      {
+        src: "/speaking/GSA-conference-biased-outcomes-and-why-they-matter.jpeg",
+        alt: "Title slide reading 'Biased AI outcomes and why they matter'",
+      },
+    ],
     body: [
       "I was invited to speak on a panel at the Girls' School Association Conference, discussing the ethical implications of AI in education and how to ensure that students are supported in navigating this rapidly evolving landscape.",
       "The conference brought together educators across the UK to address the complex mental health and wellbeing challenges facing young people today. With this year's theme covering digital strategies in schools, our panel explored how we can engage critically with the digital tools we're using in the classroom.",
@@ -94,12 +108,18 @@ export const SPEAKING: SpeakingEntry[] = [
     venue: "Haberdashers' Girls' School",
     year: "2026",
     description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "As part of the very first student-led Heads' Lecture Series at Haberdashers' Elstree Schools, Ravjoth Brar and I, shared our journey building Beri Labs, an AI education start-up creating real-world AI tools for schools.",
     border: "blackTab",
     body: [
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris — write-up in progress.",
+      "As part of the very first student-led Heads' Lecture Series at Haberdashers' Elstree Schools, Ravjoth Brar and I, shared our journey building Beri Labs, an AI education start-up creating real-world AI tools for schools.",
+      "What makes an individual lucky? Is it natural talent? Being in the right place at the right time?",
+      "Drawing from our own experience of cold pitches, strategic pivots, and (many!) rejections, we spoke about how to stop waiting for luck and start cultivating it. We outlined six key tips to cultivate your luck:",
+      "1. Be Proactive - Don't wait for opportunities to fall in your lap. Notice gaps. Act on them.",
+      "2. Have a Clear, Actionable Goal - Set something ambitious but achievable. Break it into smaller steps.",
+      "3. Lay the Foundations - Build credibility and relationships early. Network. Talk to people. Make yourself known. When the opportunity arrives, the connections are already there.",
+      "4. Judge a Book by Its Cover - First impressions matter. When you pitch an idea, you're asking for someone's time and attention so prepare accordingly.",
+      "5. Luck = Preparation + Opportunity - You can't control everything. But you can position yourself so that when moments come (and they will), you're ready.",
+      "6. Fail Fast, Learn Faster - Rejection is normal. The people who cultivate luck don't have higher success rates; they just try more. Yes, they face more rejections. But they also succeed more. And crucially, they learn from what went wrong.",
     ],
   },
 ];
