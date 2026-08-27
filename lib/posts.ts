@@ -12,7 +12,7 @@ export const POSTS: Post[] = [
     title: "Beri-Labs",
     category: "Startup",
     description:
-      "Co-founder of Beri-Labs, an ed-tech startup building RAG-powered tools that let students query their school's own documents in natural language.",
+      "Co-founder of Beri-Labs, an ed-tech startup building RAG-powered tools that let students and staff query their school's own documents in natural language.",
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",

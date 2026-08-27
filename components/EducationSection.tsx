@@ -23,6 +23,8 @@ const EDUCATION: EducationEntry[] = [
     highlights: [
       "A-Levels: 3A*s in Mathematics, Further Mathematics, and Computer Science",
       "GCSEs: 9s (A**) in all 10 subjects",
+      "Awarded the Laura Chapman Cup for 'Unobtrusive Service to the School' in recognition of my contributions to the school community",
+      "Awarded the Governor's Award for outstanding GCSE results",
       "Sixth Form Digital Lead, Prefect, Leader of Neurodiversity Society, AI-Steering Group, Maths Society Team, Maths Mentor",
     ],
   },

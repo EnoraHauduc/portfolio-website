@@ -12,16 +12,19 @@ export default function AboutSection() {
         </p>
         <div className="space-y-4 text-base leading-relaxed text-neutral-800 md:col-span-2">
           <p>
-            I&apos;ve co-founded Beri-Labs, an ed-tech startup building
+            My interests lie at the intersection of mathematics, AI, and ethics. I enjoy exploring how mathematical concepts underpin AI algorithms, and how these algorithms can be applied to solve real-world problems while considering their ethical implications.
+          </p>
+          <p>
+            On the practical side,I&apos;ve co-founded Beri-Labs, an ed-tech startup building
             RAG-powered tools that let students query their school&apos;s
             own documents in natural language, and my research on computer
             vision applications in agriculture was published as an
             occasional paper at my school.
           </p>
           <p>
-            On the ethics side, I co-authored a practitioner-focused
+            Whilst on the ethics side, I co-authored a practitioner-focused
             chapter in a published book on generative AI, bias, and policy
-            in institutional settings, and spoke in a panel on algorithmic
+            in institutional settings and spoke in a panel on algorithmic
             bias in education at the Wellington Festival of Education.
           </p>
           <p>

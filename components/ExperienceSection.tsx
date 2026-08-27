@@ -37,6 +37,41 @@ const EXPERIENCE: ExperienceEntry[] = [
       "Developed self-correcting logic using derived formula fields to prevent tracked indicators drifting out of sync with underlying data",
     ],
   },
+  {
+    id: "UP3",
+    dates: "1 Week - October 2025",
+    role: "Work Experience",
+    company: "UP3",
+    companyUrl: "https://up3.co.uk/",
+    companyDescription: "Dedicated ServiceNow Elite Partner specialising services for the ServiceNow platform",
+    highlights: [
+      "Selected from the internship cohort based on performance to complete post-programme analysis of UP3’s website, producing a 5-page accessibility review with actionable recommendations",
+      "Presented technical and ethical findings to a non-technical consulting audience; earned a ServiceNow Micro-Certification and AI/Agentic AI badges",
+    ],
+  },
+  {
+    id: "Ocado Technology",
+    dates: "1 Week - July 2024",
+    role: "Work Experience",
+    company: "Ocado Technology",
+    companyUrl: "https://www.ocadotechnology.com/",
+    companyDescription: "Innovative technology solutions for the retail industry",
+    highlights: [
+      "Designed a spatial optimisation algorithm for van zoning (greedy approach) using H3 indexing, graph-based logistics networks (NetworkX), and quantitative analysis (Pandas), applying computational geometry to a real-world last-mile logistics problem",
+    ],
+  },
+  {
+    id: "Code for Life",
+    dates: "1 Week - July 2024",
+    role: "Work Experience",
+    company: "Code for Life",
+    companyUrl: "https://www.codeforlife.education/",
+    companyDescription: "Educational technology company focused on teaching programming skills to students",
+    highlights: [
+      "Improved an educational coding game via bug triage and testing on GitHub; implemented Google Tag Manager and Analytics",
+      "	Analysed usage data in BigQuery and Looker to evaluate feature effectiveness, presenting design, data, and development insights",
+    ],
+  },
 ];
 
 export default function ExperienceSection() {
