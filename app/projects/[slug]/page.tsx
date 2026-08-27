@@ -32,7 +32,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       backLabel="Back to projects"
       category={post.category}
       title={post.title}
-      body={post.body}
+      body={post.body ?? [post.description]}
       seed={post.slug}
     />
   );

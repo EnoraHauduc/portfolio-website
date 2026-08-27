@@ -25,6 +25,7 @@ const EDUCATION: EducationEntry[] = [
       "GCSEs: 9s (A**) in all 10 subjects",
       "Awarded the Laura Chapman Cup for 'Unobtrusive Service to the School' in recognition of my contributions to the school community",
       "Awarded the Governor's Award for outstanding GCSE results",
+      "Mathematical Olympiad for Girls (UKMT) - Distinction; Best in School",
       "Sixth Form Digital Lead, Prefect, Leader of Neurodiversity Society, AI-Steering Group, Maths Society Team, Maths Mentor",
     ],
   },
