@@ -18,7 +18,7 @@ export default function AboutSection() {
         <div className="space-y-4 text-base leading-relaxed text-neutral-800 md:col-span-2">
           <p>
             I&apos;m a mathematics student at UCL interested in the intersection
-            of mathematics, AI and ethics: how the mathematics underpinning AI
+            of <strong className="font-semibold">mathematics, AI and ethics</strong>: how the mathematics underpinning AI
             algorithms works, and how those algorithms can be applied to
             real-world problems responsibly.
           </p>
@@ -29,7 +29,7 @@ export default function AboutSection() {
             </Link>
             , which builds retrieval-augmented tools that let school staff and
             students query their school&apos;s own documents in natural
-            language, and my team placed 2nd out of 300 at the AI.WOMEN
+            language, and my team placed <strong className="font-semibold">2nd out of 300</strong> at the AI.WOMEN
             Hackathon in Hamburg with{" "}
             <Link
               href="/projects/safeway-ai-women-hackathon"
@@ -41,15 +41,15 @@ export default function AboutSection() {
             fastest.
           </p>
           <p>
-            I also speak and write about AI in education. I{" "}
+            I also <strong className="font-semibold">speak and write about AI in education</strong>. I{" "}
             <Link
               href="/publications/ai-bias-in-education-book-chapter"
               className={linkClass}
             >
               co-authored a chapter
             </Link>{" "}
-            in a published book on generative AI and bias as its only student
-            contributor, spoke on panels at the{" "}
+            in a published book on generative AI and bias as its{" "}
+            <strong className="font-semibold">only student contributor</strong>, spoke on panels at the{" "}
             <Link
               href="/speaking/wellington-festival-panel"
               className={linkClass}
@@ -60,7 +60,7 @@ export default function AboutSection() {
             <Link href="/speaking/gsa-conference-panel" className={linkClass}>
               Girls&apos; School Association Conference
             </Link>
-            , and won a prize for my{" "}
+            , and <strong className="font-semibold">won a prize</strong> for my{" "}
             <Link
               href="/publications/extended-research-project"
               className={linkClass}
@@ -73,16 +73,17 @@ export default function AboutSection() {
             Beyond AI, I enjoy pushing myself out of my comfort zone, so I
             recently gave a{" "}
             <Link href="/speaking/tedx-time-perception" className={linkClass}>
-              TEDx talk
+              <strong className="font-semibold">TEDx talk</strong>
             </Link>{" "}
             on the philosophy of time perception, exploring how cognitive and
             physical models of time diverge, and what that reveals about the
             limits of human intuition.
           </p>
           <p>
-            I&apos;m always keen to learn more from everyone and am actively
-            seeking work experience and internships in mathematical and
-            AI-related fields. Let&apos;s connect! Feel free to drop me an
+            I&apos;m always keen to learn more from everyone and am <strong className="font-semibold">
+              actively seeking work experience and internships in
+              mathematical and AI-related fields
+            </strong>. Let&apos;s connect! Feel free to drop me an
             email at{" "}
             <a href="mailto:enorahauduc@gmail.com" className={linkClass}>
               enorahauduc@gmail.com

@@ -72,6 +72,12 @@ export const POSTS: Post[] = [
     category: "Essay",
     description:
       "Modelled the art gallery problem using computational geometry; used triangulation and 3-colouring to derive the ⌊n/3⌋ guard bound through proof by induction; produced original diagrams.",
+    links: [
+      {
+        label: "Read the essay",
+        href: "https://tomrocksmaths.com/wp-content/uploads/2025/06/a-mathematical-approach-to-paranormal-protection-enora-hauduc-enora.pdf",
+      },
+    ],
   },
 ];
 

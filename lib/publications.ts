@@ -9,6 +9,7 @@ export type Publication = {
   body: string[];
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
+  links?: { label: string; href: string }[];
 };
 
 export const PUBLICATIONS: Publication[] = [
@@ -26,6 +27,7 @@ export const PUBLICATIONS: Publication[] = [
       "Despite some accessibility and computational challenges remaining, these applications collectively demonstrate how computer vision systems can enhance agricultural resilience and contribute to a more sustainable and food-secure future.",
       "https://www.habselstree.org.uk/wp-content/uploads/2025/11/OP-90-Hauduc-Harvesting-Intelligence.pdf",
     ],
+    links: [{ label: "View on Zenodo", href: "https://zenodo.org/records/21887610" }],
   },
   {
     slug: "ai-bias-in-education-book-chapter",

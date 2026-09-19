@@ -1,5 +1,11 @@
 import EntryRow from "./EntryRow";
-import { POSTS } from "@/lib/posts";
+import { POSTS, type Post } from "@/lib/posts";
+
+// A project with no body of its own renders its description as the detail
+// page, so linking to it would just repeat the card.
+function hasDetailPage(post: Post) {
+  return Boolean(post.body || post.video || post.links || post.gallery);
+}
 
 export default function ProjectsSection() {
   return (
@@ -9,7 +15,7 @@ export default function ProjectsSection() {
         {POSTS.map((post) => (
           <EntryRow
             key={post.slug}
-            href={`/projects/${post.slug}`}
+            href={hasDetailPage(post) ? `/projects/${post.slug}` : undefined}
             category={post.category}
             title={post.title}
             description={post.description}

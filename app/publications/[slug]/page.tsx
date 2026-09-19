@@ -36,6 +36,7 @@ export default function PublicationPage({ params }: { params: { slug: string } }
       seed={pub.slug}
       border={pub.border}
       image={pub.image}
+      links={pub.links}
     />
   );
 }

@@ -3,7 +3,7 @@ import BorderedFrame, { type BorderedFrameVariant } from "./BorderedFrame";
 import { seededFrameTransform } from "@/lib/seededTransform";
 
 type EntryRowProps = {
-  href: string;
+  href?: string;
   category: string;
   title: string;
   description: string;
@@ -25,23 +25,29 @@ export default function EntryRow({
 }: EntryRowProps) {
   const transform = border ? seededFrameTransform(seed) : null;
 
-  return (
-    <Link
-      href={href}
-      className="group flex flex-col gap-6 border-b-2 border-black py-10 first:pt-0 last:border-b-0 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
-    >
+  const rowClass =
+    "group flex flex-col gap-6 border-b-2 border-black py-10 first:pt-0 last:border-b-0 sm:flex-row sm:items-center sm:justify-between sm:gap-10";
+
+  const content = (
+    <>
       <div className={border ? "sm:max-w-lg" : undefined}>
         <p className="text-xs uppercase tracking-wide text-neutral-500">{category}</p>
-        <h3 className="mt-1 font-display text-2xl transition-opacity group-hover:opacity-60 sm:text-3xl">
+        <h3
+          className={`mt-1 font-display text-2xl sm:text-3xl ${
+            href ? "transition-opacity group-hover:opacity-60" : ""
+          }`}
+        >
           {title}
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-neutral-700">{description}</p>
-        <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-black pb-0.5 text-xs uppercase tracking-wide">
-          Read more
-          <span aria-hidden className="transition-transform group-hover:translate-x-1.5">
-            →
+        {href && (
+          <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-black pb-0.5 text-xs uppercase tracking-wide">
+            Read more
+            <span aria-hidden className="transition-transform group-hover:translate-x-1.5">
+              →
+            </span>
           </span>
-        </span>
+        )}
       </div>
 
       {border && transform && (
@@ -57,6 +63,14 @@ export default function EntryRow({
           />
         </div>
       )}
+    </>
+  );
+
+  return href ? (
+    <Link href={href} className={rowClass}>
+      {content}
     </Link>
+  ) : (
+    <div className={rowClass}>{content}</div>
   );
 }
