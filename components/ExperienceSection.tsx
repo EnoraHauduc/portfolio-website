@@ -17,9 +17,8 @@ const EXPERIENCE: ExperienceEntry[] = [
     company: "GFO-X",
     companyUrl: "https://www.gfo-x.com/",
     companyDescription: "Regulated Digital Assets Exchange and Clearing",
-    description: "Delivered a dashboard for tracking company-wide AI spend and token usage across 6 providers.",
     highlights: [
-      "Co-directed the development of an internal dashboard, delivering real-time visibility into company-wide AI token usage and spending trends across 6 providers for 30+ users, informing strategic resource allocation",
+      "Co-led the development of an internal dashboard, delivering real-time visibility into company-wide AI token usage and spending trends across 6 providers for 30+ users, informing strategic resource allocation",
       "Worked across the full stack: integrated multiple APIs and normalised data across endpoints into a unified pipeline, implemented a lightweight database backend, and built a Python-based frontend using Streamlit",
       "Automated data collection with scheduled cron jobs and applied UX research and data-visualisation best practice to the dashboard design",
       "Presented the final product and technical approach to the entire company, covering design decisions, safeguards and long-term maintainability",
@@ -32,9 +31,8 @@ const EXPERIENCE: ExperienceEntry[] = [
     company: "Bequant",
     companyUrl: "https://bequant.io/",
     companyDescription: "Crypto Assets Investment and Payment Services",
-    description: "Delivered a dashboard consolidating client messages from multiple chats into a single interface.",
     highlights: [
-      "Led the design and integration of an internal dashboard, consolidating client messages from multiple chats into a single interface, enhancing leadership's real-time visibility into open queries and identifying recurring pain points",
+      "Independently designed and integrated an internal dashboard, consolidating client messages from multiple chats into a single interface, enhancing leadership's real-time visibility into open queries and identifying recurring pain points",
       "Streamlined data operations by engineering robust MCP integrations and architecting a relational Notion schema, automating data collection and normalisation to significantly enhance data quality and accessibility",
       "Developed self-correcting logic using derived formula fields to prevent tracked indicators drifting out of sync with underlying data",
     ],
@@ -84,43 +82,41 @@ export default function ExperienceSection() {
         {EXPERIENCE.map((entry) => (
           <div
             key={entry.id}
-            className="border-b-2 border-black py-8 first:pt-0 last:border-b-0"
+            className="grid grid-cols-1 gap-2 border-b-2 border-black py-8 first:pt-0 last:border-b-0 sm:grid-cols-4 sm:gap-6"
           >
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-10">
-              <p className="text-sm uppercase tracking-wide text-neutral-500 sm:order-2 sm:whitespace-nowrap sm:text-right">
-                {entry.dates}
-              </p>
-              <div className="sm:order-1">
-                <h3 className="font-display text-xl">
-                  {entry.role} -{" "}
-                  {entry.companyUrl ? (
-                    <a
-                      href={entry.companyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-2 hover:text-neutral-600"
-                    >
-                      {entry.company}
-                    </a>
-                  ) : (
-                    entry.company
-                  )}
-                </h3>
-                {entry.companyDescription && (
-                  <p className="font-serif italic text-neutral-600">{entry.companyDescription}</p>
+            <p className="text-sm uppercase tracking-wide text-neutral-500 sm:col-span-1">
+              {entry.dates}
+            </p>
+            <div className="sm:col-span-3">
+              <h3 className="font-display text-xl">
+                {entry.role} -{" "}
+                {entry.companyUrl ? (
+                  <a
+                    href={entry.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-neutral-600"
+                  >
+                    {entry.company}
+                  </a>
+                ) : (
+                  entry.company
                 )}
-              </div>
+              </h3>
+              {entry.companyDescription && (
+                <p className="font-serif italic text-neutral-600">{entry.companyDescription}</p>
+              )}
+              {entry.description && (
+                <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
+              )}
+              {entry.highlights && entry.highlights.length > 0 && (
+                <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700">
+                  {entry.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-            {entry.description && (
-              <p className="mt-2 text-sm leading-relaxed text-neutral-700">{entry.description}</p>
-            )}
-            {entry.highlights && entry.highlights.length > 0 && (
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700">
-                {entry.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-            )}
           </div>
         ))}
       </div>
