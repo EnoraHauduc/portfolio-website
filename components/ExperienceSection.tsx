@@ -69,7 +69,7 @@ const EXPERIENCE: ExperienceEntry[] = [
     companyDescription: "Educational technology company focused on teaching programming skills to students",
     highlights: [
       "Improved an educational coding game via bug triage and testing on GitHub; implemented Google Tag Manager and Analytics",
-      "	Analysed usage data in BigQuery and Looker to evaluate feature effectiveness, presenting design, data, and development insights",
+      "Analysed usage data in BigQuery and Looker to evaluate feature effectiveness, presenting design, data, and development insights",
     ],
   },
 ];

@@ -34,6 +34,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       title={post.title}
       body={post.body ?? [post.description]}
       seed={post.slug}
+      border={post.border}
+      image={post.image}
+      images={post.images}
+      video={post.video}
     />
   );
 }

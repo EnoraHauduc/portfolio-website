@@ -79,9 +79,22 @@ export default function EntryDetail({
         )}
 
         <div className={`space-y-5 text-base leading-relaxed text-neutral-800 ${border ? "mt-12" : "mt-10"}`}>
-          {body.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+          {body.map((paragraph, i) =>
+            /^https?:\/\/\S+$/.test(paragraph) ? (
+              <p key={i}>
+                <a
+                  href={paragraph}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="break-all underline underline-offset-2 hover:text-neutral-600"
+                >
+                  {paragraph}
+                </a>
+              </p>
+            ) : (
+              <p key={i}>{paragraph}</p>
+            ),
+          )}
         </div>
       </article>
       <Footer />
