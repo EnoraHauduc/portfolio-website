@@ -21,7 +21,7 @@ export default function ProjectsSection() {
             description={post.description}
             seed={post.slug}
             border={post.border}
-            image={post.images?.[0] ?? post.image ?? post.thumbnail}
+            image={post.images?.[0] ?? post.image}
             hasVideo={Boolean(post.video)}
           />
         ))}

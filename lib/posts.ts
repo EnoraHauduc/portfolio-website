@@ -8,8 +8,6 @@ export type Post = {
   body?: string[];
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
-  // Shown on the homepage card only, not on the detail page.
-  thumbnail?: { src: string; alt?: string };
   images?: { src: string; alt?: string }[];
   video?: { youtubeId: string };
   gallery?: { src: string; alt: string }[];
@@ -50,7 +48,7 @@ export const POSTS: Post[] = [
       "Co-founder of Beri-Labs, an ed-tech startup building RAG-powered tools that let students and staff query their school's own documents in natural language.",
     border: "browserTab",
     image: {
-      src: "/projects/beri-labs-assistant.png",
+      src: "/projects/beri-labs-assistant.jpg",
       alt: "Beri College AI Assistant, a demo Beri chatbot answering questions about a fictitious school",
     },
     links: [{ label: "Landing Page", href: "https://beri-labs.github.io/" }],
@@ -80,8 +78,8 @@ export const POSTS: Post[] = [
     description:
       "Modelled the art gallery problem using computational geometry; used triangulation and 3-colouring to derive the ⌊n/3⌋ guard bound through proof by induction; produced original diagrams.",
     border: "window",
-    thumbnail: {
-      src: "/projects/mathematical-modelling-essay.png",
+    image: {
+      src: "/projects/mathematical-modelling-essay.jpg",
       alt: "Title page of A Mathematical Approach to Paranormal Protection",
     },
     links: [

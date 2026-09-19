@@ -2,6 +2,7 @@ import Link from "next/link";
 import BorderedFrame, { type BorderedFrameVariant } from "./BorderedFrame";
 import Footer from "./Footer";
 import Navigation from "./Navigation";
+import YouTubeEmbed from "./YouTubeEmbed";
 import { withBasePath } from "@/lib/basePath";
 import { seededFrameTransform } from "@/lib/seededTransform";
 
@@ -72,13 +73,7 @@ export default function EntryDetail({
               aspectClassName={video ? "aspect-video" : "aspect-[4/3]"}
             >
               {video && (
-                <iframe
-                  className="h-full w-full"
-                  src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                  title={title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+                <YouTubeEmbed youtubeId={video.youtubeId} title={title} />
               )}
             </BorderedFrame>
           </div>
@@ -111,7 +106,7 @@ export default function EntryDetail({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full border-2 border-black px-8 py-3 text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper"
+                className="block w-full rounded-full border-2 border-black px-8 py-3 text-center text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper sm:inline-block sm:w-auto"
               >
                 {link.label} ↗
               </a>

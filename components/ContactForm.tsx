@@ -25,6 +25,7 @@ export default function ContactForm() {
           id="name"
           name="name"
           type="text"
+          autoComplete="name"
           required
           className="mt-2 w-full border-b-2 border-black bg-transparent py-2 outline-none focus:border-neutral-500"
         />
@@ -39,6 +40,8 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
+          autoComplete="email"
+          inputMode="email"
           required
           className="mt-2 w-full border-b-2 border-black bg-transparent py-2 outline-none focus:border-neutral-500"
         />
@@ -62,7 +65,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="rounded-full border-2 border-black px-8 py-3 text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper disabled:opacity-50"
+        className="w-full rounded-full border-2 border-black px-8 py-3 text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper disabled:opacity-50 sm:w-auto"
       >
         {state.submitting ? "Sending..." : "Send message"}
       </button>

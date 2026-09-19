@@ -9,8 +9,6 @@ export type Publication = {
   body: string[];
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
-  // Shown on the homepage card only, not on the detail page.
-  thumbnail?: { src: string; alt?: string };
   links?: { label: string; href: string }[];
 };
 
@@ -30,8 +28,8 @@ export const PUBLICATIONS: Publication[] = [
       "Despite some accessibility and computational challenges remaining, these applications collectively demonstrate how computer vision systems can enhance agricultural resilience and contribute to a more sustainable and food-secure future.",
     ],
     border: "blackTab",
-    thumbnail: {
-      src: "/publications/extended-research-project.png",
+    image: {
+      src: "/publications/extended-research-project.jpg",
       alt: "Page from the Extended Research Project comparing hyperspectral and RGB imaging",
     },
     links: [

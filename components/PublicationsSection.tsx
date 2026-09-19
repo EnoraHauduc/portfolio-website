@@ -15,7 +15,7 @@ export default function PublicationsSection() {
             description={pub.description}
             seed={pub.slug}
             border={pub.border}
-            image={pub.image ?? pub.thumbnail}
+            image={pub.image}
           />
         ))}
       </div>
