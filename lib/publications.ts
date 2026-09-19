@@ -7,7 +7,7 @@ export type Publication = {
   year: string;
   description: string;
   body: string[];
-  border: BorderedFrameVariant;
+  border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
 };
 
@@ -19,7 +19,6 @@ export const PUBLICATIONS: Publication[] = [
     year: "2025",
     description:
       "STEM Prize-winner across both Haberdashers' schools; published as an Occasional Paper on how computer vision could improve food security, including comparison of model families (YOLO, F-CNNs)",
-    border: "window",
     body: [
       "Increasing populations have led to greater concerns surrounding the effects of climate change, leading to food security becoming one of the most pressing challenges of the 21st century. To meet this demand, new data-driven and intelligent approaches to agriculture have emerged.",
       "This paper explores how computer vision, a branch of artificial intelligence that trains computers to interpret visual information, is transforming agricultural practices today.",

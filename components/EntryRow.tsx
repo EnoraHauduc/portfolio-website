@@ -36,6 +36,12 @@ export default function EntryRow({
           {title}
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-neutral-700">{description}</p>
+        <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-black pb-0.5 text-xs uppercase tracking-wide">
+          Read more
+          <span aria-hidden className="transition-transform group-hover:translate-x-1.5">
+            →
+          </span>
+        </span>
       </div>
 
       {border && transform && (
