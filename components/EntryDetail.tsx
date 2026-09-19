@@ -17,6 +17,7 @@ type EntryDetailProps = {
   images?: { src: string; alt?: string }[];
   video?: { youtubeId: string };
   gallery?: { src: string; alt: string }[];
+  links?: { label: string; href: string }[];
 };
 
 export default function EntryDetail({
@@ -31,6 +32,7 @@ export default function EntryDetail({
   images,
   video,
   gallery,
+  links,
 }: EntryDetailProps) {
   const transform = border ? seededFrameTransform(seed) : null;
 
@@ -99,6 +101,22 @@ export default function EntryDetail({
             ),
           )}
         </div>
+
+        {links && links.length > 0 && (
+          <div className="mt-8 flex flex-wrap gap-4">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full border-2 border-black px-8 py-3 text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+        )}
 
         {gallery && gallery.length > 0 && (
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">

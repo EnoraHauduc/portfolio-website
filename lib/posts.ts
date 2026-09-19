@@ -11,6 +11,7 @@ export type Post = {
   images?: { src: string; alt?: string }[];
   video?: { youtubeId: string };
   gallery?: { src: string; alt: string }[];
+  links?: { label: string; href: string }[];
 };
 
 export const POSTS: Post[] = [
@@ -26,6 +27,7 @@ export const POSTS: Post[] = [
       src: "/projects/safeway-app.jpg",
       alt: "SafeWay app showing ranked walking route options on a map of Hamburg",
     },
+    links: [{ label: "View on GitHub", href: "https://github.com/EnoraHauduc/SafeWay" }],
     gallery: [
       { src: "/projects/safeway-award.jpg", alt: "The SafeWay team holding the 2nd place Best Overall Project award at the AI.WOMEN Hackathon" },
       { src: "/projects/safeway-winner-tickets.jpg", alt: "The SafeWay team holding their AI.SUMMIT 2026 winner tickets" },

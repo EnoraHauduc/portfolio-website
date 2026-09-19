@@ -39,6 +39,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       images={post.images}
       video={post.video}
       gallery={post.gallery}
+      links={post.links}
     />
   );
 }
