@@ -34,7 +34,7 @@ export const POSTS: Post[] = [
       { src: "/projects/safeway-team-working.jpg", alt: "The SafeWay team working together at the hackathon" },
     ],
     body: [
-      "2nd place overall (Best Overall Project) at the AI.WOMEN Hackathon in Hamburg, 12-13 September 2026, out of 300 participants. The team was invited to the AI.SUMMIT 2026 in November.",
+      "2nd place overall at the AI.WOMEN Hackathon in Hamburg, 12-13 September 2026, out of 300 participants. The team was invited to the AI.SUMMIT 2026 in November.",
       "Built with Hannah Kalker, Janne Achenbach, Dominika Oliinyk and Megha Darda, SafeWay is a pedestrian routing app that finds the safest walk home, not just the fastest one. It scores a few route options against the traveller's own preferences (lighting, street type etc.), so each person gets a route personalised to them.",
       "The technical challenge: Hamburg doesn't have an official open streetlight dataset. SafeWay pulls street data from OpenStreetMap via the Overpass API, classifies each segment as unlit or lit and by type (residential, main road etc.), and turns that into an avoid layer. This is fed into OpenRouteService's routing engine as avoid-polygons, which generates the route alternatives live and scores them against the user's preferences.",
       "The QR code at the end of the demo video only works within Hamburg's coverage area, as it was built for the city we hacked in, in the time we had.",
@@ -46,10 +46,10 @@ export const POSTS: Post[] = [
     category: "Startup",
     description:
       "Co-founder of Beri-Labs, an ed-tech startup building RAG-powered tools that let students and staff query their school's own documents in natural language.",
+    links: [{ label: "Landing Page", href: "https://beri-labs.github.io/" }],
     body: [
-      "Co-founder of Beri-Labs, an ed-tech startup building RAG-powered tools that let students and staff query their school's own documents in natural language.",
-      "Helped 15 staff members in a leading independent school to onboard using our custom onboarding tool.",
-      "https://beri-labs.github.io/",
+      "Essential information in schools is spread across handbooks, staff structures and procedures. Beri is a collection of models that bring it together in one chatbot that answers staff, student and parents’ questions using only the school's own material with included citations.",
+      "Our Beri onboarding model is being currently implemented into a leading independent school to onboard 15 teachers this September 2026. New staff have to learn who to contact, how the core systems work and what the teaching procedures are, and the answers are spread across long documents. Our onboarding model provides a single interface for accessing all these answers.",
     ],
   },
   {
@@ -64,7 +64,7 @@ export const POSTS: Post[] = [
     title: "Stock Market Sentiment Analysis",
     category: "Guided Project",
     description:
-      "Analysed stock market movement from social-media text using BERT embeddings and logistic regression (TensorFlow/Keras/scikit-learn), achieving ~96% classification accuracy; choosing BERT over simpler embeddings to capture contextual sentiment nuance. Presented findings to 50+ attendees, translating model design decisions for a non-technical audience.",
+      "Classified sentiment from social-media text using BERT embeddings and logistic regression (TensorFlow/Keras/scikit-learn), achieving ~96% classification accuracy; choosing BERT over simpler embeddings to capture contextual sentiment nuance. Presented findings to 50+ attendees, translating model design decisions for a non-technical audience.",
   },
   {
     slug: "mathematical-modelling-essay",

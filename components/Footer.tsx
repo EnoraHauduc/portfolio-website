@@ -20,6 +20,14 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+          <a
+            href="https://github.com/EnoraHauduc"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-opacity hover:opacity-60"
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </footer>

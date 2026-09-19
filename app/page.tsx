@@ -35,6 +35,14 @@ export default function Home() {
         >
           Connect on LinkedIn
         </a>
+        <a
+          href="https://github.com/EnoraHauduc"
+          target="_blank"
+          rel="noreferrer"
+          className="ml-3 mt-6 inline-block rounded-full border-2 border-black px-8 py-3 text-sm uppercase tracking-wide transition-colors hover:bg-black hover:text-paper"
+        >
+          View GitHub
+        </a>
         <ContactForm />
       </section>
       <Footer />

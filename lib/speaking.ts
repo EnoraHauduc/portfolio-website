@@ -24,7 +24,7 @@ export const SPEAKING: SpeakingEntry[] = [
     border: "crt",
     image: {
       src: "/speaking/tedx-time-perception.png",
-      alt: "Enora Hauduc on stage at TEDx Haus Elstree, presenting The Illusion of Time",
+      alt: "TEDx Habs Elstree",
     },
     video: { youtubeId: "eWKeNngTqAk" },
     body: [
