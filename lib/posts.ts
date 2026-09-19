@@ -10,6 +10,7 @@ export type Post = {
   image?: { src: string; alt?: string };
   images?: { src: string; alt?: string }[];
   video?: { youtubeId: string };
+  gallery?: { src: string; alt: string }[];
 };
 
 export const POSTS: Post[] = [
@@ -21,10 +22,14 @@ export const POSTS: Post[] = [
       "Placed 2nd overall out of 300 participants at the AI.WOMEN Hackathon in Hamburg, with an invitation to AI.SUMMIT 2026. Built SafeWay, a pedestrian routing app that finds the safest walk home rather than the fastest, personalised to each traveller's preferences.",
     border: "browserTab",
     video: { youtubeId: "axFjS1mrnR8" },
-    images: [
-      { src: "/projects/safeway-app.jpg", alt: "SafeWay app showing ranked walking route options on a map of Hamburg" },
-      { src: "/projects/safeway-team-working.jpg", alt: "The SafeWay team working together at the AI.WOMEN Hackathon" },
+    image: {
+      src: "/projects/safeway-app.jpg",
+      alt: "SafeWay app showing ranked walking route options on a map of Hamburg",
+    },
+    gallery: [
+      { src: "/projects/safeway-award.jpg", alt: "The SafeWay team holding the 2nd place Best Overall Project award at the AI.WOMEN Hackathon" },
       { src: "/projects/safeway-winner-tickets.jpg", alt: "The SafeWay team holding their AI.SUMMIT 2026 winner tickets" },
+      { src: "/projects/safeway-team-working.jpg", alt: "The SafeWay team working together at the hackathon" },
     ],
     body: [
       "2nd place overall (Best Overall Project) at the AI.WOMEN Hackathon in Hamburg, 12-13 September 2026, out of 300 participants. The team was invited to the AI.SUMMIT 2026 in November.",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import BorderedFrame, { type BorderedFrameVariant } from "./BorderedFrame";
 import Footer from "./Footer";
 import Navigation from "./Navigation";
+import { withBasePath } from "@/lib/basePath";
 import { seededFrameTransform } from "@/lib/seededTransform";
 
 type EntryDetailProps = {
@@ -15,6 +16,7 @@ type EntryDetailProps = {
   image?: { src: string; alt?: string };
   images?: { src: string; alt?: string }[];
   video?: { youtubeId: string };
+  gallery?: { src: string; alt: string }[];
 };
 
 export default function EntryDetail({
@@ -28,6 +30,7 @@ export default function EntryDetail({
   image,
   images,
   video,
+  gallery,
 }: EntryDetailProps) {
   const transform = border ? seededFrameTransform(seed) : null;
 
@@ -96,6 +99,22 @@ export default function EntryDetail({
             ),
           )}
         </div>
+
+        {gallery && gallery.length > 0 && (
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
+            {gallery.map((photo, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={photo.src}
+                src={withBasePath(photo.src)}
+                alt={photo.alt}
+                className={`aspect-[4/3] w-full rounded-lg border-[3px] border-black object-cover shadow-[7px_7px_0_0_rgba(0,0,0,1)] ${
+                  i === 0 && gallery.length % 2 === 1 ? "sm:col-span-2" : ""
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </article>
       <Footer />
     </main>
