@@ -34,7 +34,8 @@ export default function EntryDetail({
   gallery,
   links,
 }: EntryDetailProps) {
-  const transform = border ? seededFrameTransform(seed) : null;
+  const showFrame = Boolean(border && (video || image || images?.length));
+  const transform = showFrame ? seededFrameTransform(seed) : null;
 
   return (
     <main>
@@ -50,7 +51,7 @@ export default function EntryDetail({
         <p className="mt-6 text-xs uppercase tracking-wide text-neutral-500">{category}</p>
         <h1 className="mt-1 font-display text-4xl sm:text-5xl">{title}</h1>
 
-        {border && transform && (
+        {showFrame && border && transform && (
           <div className={`mx-auto mt-10 w-full ${video ? "max-w-3xl" : "max-w-md"}`}>
             <BorderedFrame
               variant={border}
@@ -83,7 +84,7 @@ export default function EntryDetail({
           </div>
         )}
 
-        <div className={`space-y-5 text-base leading-relaxed text-neutral-800 ${border ? "mt-12" : "mt-10"}`}>
+        <div className={`space-y-5 text-base leading-relaxed text-neutral-800 ${showFrame ? "mt-12" : "mt-10"}`}>
           {body.map((paragraph, i) =>
             /^https?:\/\/\S+$/.test(paragraph) ? (
               <p key={i}>

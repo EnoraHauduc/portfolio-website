@@ -9,6 +9,8 @@ export type Publication = {
   body: string[];
   border?: BorderedFrameVariant;
   image?: { src: string; alt?: string };
+  // Shown on the homepage card only, not on the detail page.
+  thumbnail?: { src: string; alt?: string };
   links?: { label: string; href: string }[];
 };
 
@@ -19,15 +21,23 @@ export const PUBLICATIONS: Publication[] = [
     venue: "Haberdashers' Occasional Paper",
     year: "2025",
     description:
-      "STEM Prize-winner across both Haberdashers' schools; published as an Occasional Paper on how computer vision could improve food security, including comparison of model families (YOLO, F-CNNs)",
+      "Placed 2nd in the STEM Prize out of 275+ students across both Haberdashers' schools; published as an Occasional Paper on how computer vision could improve food security, including comparison of model families (YOLO, F-CNNs)",
     body: [
+      "This project placed 2nd in the STEM Prize, out of 275+ students across both Haberdashers' schools, and was published as an Occasional Paper.",
       "Increasing populations have led to greater concerns surrounding the effects of climate change, leading to food security becoming one of the most pressing challenges of the 21st century. To meet this demand, new data-driven and intelligent approaches to agriculture have emerged.",
       "This paper explores how computer vision, a branch of artificial intelligence that trains computers to interpret visual information, is transforming agricultural practices today.",
       "By combining hyperspectral imaging with 3D Convolutional Neural Networks, computer vision allows for plant diseases to be detected earlier, reducing pesticide use and preventing crop loss. For crop planning, Fully Convolutional Neural Networks applied to satellite imagery allow for farmland to be mapped more precisely, improving yield estimation and land management. And within farms, YOLO-based object detection methods automate cattle health monitoring, allowing farmers to manage larger and healthier herds.",
       "Despite some accessibility and computational challenges remaining, these applications collectively demonstrate how computer vision systems can enhance agricultural resilience and contribute to a more sustainable and food-secure future.",
-      "https://www.habselstree.org.uk/wp-content/uploads/2025/11/OP-90-Hauduc-Harvesting-Intelligence.pdf",
     ],
-    links: [{ label: "View on Zenodo", href: "https://zenodo.org/records/21887610" }],
+    border: "blackTab",
+    thumbnail: {
+      src: "/publications/extended-research-project.png",
+      alt: "Page from the Extended Research Project comparing hyperspectral and RGB imaging",
+    },
+    links: [
+      { label: "View Occasional Paper", href: "https://www.habselstree.org.uk/wp-content/uploads/2025/11/OP-90-Hauduc-Harvesting-Intelligence.pdf" },
+      { label: "View on Zenodo", href: "https://zenodo.org/records/21887610" },
+    ],
   },
   {
     slug: "ai-bias-in-education-book-chapter",

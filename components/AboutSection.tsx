@@ -60,7 +60,7 @@ export default function AboutSection() {
             <Link href="/speaking/gsa-conference-panel" className={linkClass}>
               Girls&apos; School Association Conference
             </Link>
-            , and <strong className="font-semibold">won a prize</strong> for my{" "}
+            , and <strong className="font-semibold">placed 2nd out of 275+ students</strong> in the STEM Prize for my{" "}
             <Link
               href="/publications/extended-research-project"
               className={linkClass}
