@@ -1,3 +1,8 @@
+import Link from "next/link";
+
+const linkClass =
+  "underline decoration-1 underline-offset-2 transition-opacity hover:opacity-60";
+
 export default function AboutSection() {
   return (
     <section
@@ -12,36 +17,74 @@ export default function AboutSection() {
         </p>
         <div className="space-y-4 text-base leading-relaxed text-neutral-800 md:col-span-2">
           <p>
-            My interests lie at the intersection of mathematics, AI, and ethics. I enjoy exploring how mathematical concepts underpin AI algorithms, and how these algorithms can be applied to solve real-world problems while considering their ethical implications.
+            I&apos;m a mathematics student at UCL interested in the intersection
+            of mathematics, AI and ethics: how the mathematics underpinning AI
+            algorithms works, and how those algorithms can be applied to
+            real-world problems responsibly.
           </p>
           <p>
-            On the practical side,I&apos;ve co-founded Beri-Labs, an ed-tech startup building
-            RAG-powered tools that let students query their school&apos;s
-            own documents in natural language, and my research on computer
-            vision applications in agriculture was published as an
-            occasional paper at my school.
-          </p>
-          <p>
-            Whilst on the ethics side, I co-authored a practitioner-focused
-            chapter in a published book on generative AI, bias, and policy
-            in institutional settings and spoke in a panel on algorithmic
-            bias in education at the Wellington Festival of Education.
-          </p>
-          <p>
-            Beyond AI, I enjoy pushing myself out of my comfort zone and so I recently gave a TEDx talk on the philosophy of time
-            perception, exploring how cognitive and physical models of
-            time diverge, and what that reveals about the limits of human
-            intuition.
-          </p>
-          <p>
-            
-            I&apos;m always keen to learn more from everyone and am actively seeking work
-            experience and internships in mathematical and AI-related
-            fields. Let&apos;s connect! Feel free to drop me an email at{" "}
-            <a
-              href="mailto:enorahauduc@gmail.com"
-              className="underline decoration-1 underline-offset-2 transition-opacity hover:opacity-60"
+            I co-founded{" "}
+            <Link href="/projects/beri-labs" className={linkClass}>
+              Beri-Labs
+            </Link>
+            , which builds retrieval-augmented tools that let school staff and
+            students query their school&apos;s own documents in natural
+            language, and my team placed 2nd out of 300 at the AI.WOMEN
+            Hackathon in Hamburg with{" "}
+            <Link
+              href="/projects/safeway-ai-women-hackathon"
+              className={linkClass}
             >
+              SafeWay
+            </Link>
+            , a routing app that finds the safest walk home rather than the
+            fastest.
+          </p>
+          <p>
+            I also speak and write about AI in education. I{" "}
+            <Link
+              href="/publications/ai-bias-in-education-book-chapter"
+              className={linkClass}
+            >
+              co-authored a chapter
+            </Link>{" "}
+            in a published book on generative AI and bias as its only student
+            contributor, spoke on panels at the{" "}
+            <Link
+              href="/speaking/wellington-festival-panel"
+              className={linkClass}
+            >
+              Wellington Festival of Education
+            </Link>{" "}
+            and the{" "}
+            <Link href="/speaking/gsa-conference-panel" className={linkClass}>
+              Girls&apos; School Association Conference
+            </Link>
+            , and won a prize for my{" "}
+            <Link
+              href="/publications/extended-research-project"
+              className={linkClass}
+            >
+              extended research project
+            </Link>{" "}
+            on computer vision for food security.
+          </p>
+          <p>
+            Beyond AI, I enjoy pushing myself out of my comfort zone, so I
+            recently gave a{" "}
+            <Link href="/speaking/tedx-time-perception" className={linkClass}>
+              TEDx talk
+            </Link>{" "}
+            on the philosophy of time perception, exploring how cognitive and
+            physical models of time diverge, and what that reveals about the
+            limits of human intuition.
+          </p>
+          <p>
+            I&apos;m always keen to learn more from everyone and am actively
+            seeking work experience and internships in mathematical and
+            AI-related fields. Let&apos;s connect! Feel free to drop me an
+            email at{" "}
+            <a href="mailto:enorahauduc@gmail.com" className={linkClass}>
               enorahauduc@gmail.com
             </a>{" "}
             or view my projects below.
